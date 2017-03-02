@@ -1,0 +1,130 @@
+To Do List:
+	Since this is a to-do list, a 'task' is a natural abstraction, and in any case 'tasks' and 'projects' are both mentioned in the description. They are also likely to have their own data (such as names and/or descriptions), so it makes more sense to represent tasks as objects rather then just strings.
+
+	A Task has:
+
+	a name
+	a time when it is begun
+	a time when it is completed
+	
+	A Project has:
+	a name
+	a description
+	a set of tasks
+
+Photo Sharing App:
+	The photo sharing app will allow users to upload photos to their personal accounts which can be organized within albums.
+
+	The user has:
+	a password to access site
+	a username
+	a url to account
+
+	A Photo has:
+	a url used to upload
+	a description
+	a date and time
+
+	A Album has:
+	a title
+	a maxium number of storable photos
+	a url used to link a batch of photos
+
+Home Automation Manager:
+	The home automation will allow home oweners to manage utilities remotely to assist in managing energy usage.
+
+	A user has:
+	a password to access system
+	a username that links account to system
+	an adjuster to flutuate thermostat and lights
+
+	A thermostat has:
+	a temperature
+	a heat and a/c sensors
+
+	A home has:
+	a set of lights
+
+Sneaker Store:
+	This app is an e-commerce site that will allow users to save sneakers in a shopping cart for immediate or stored purchases.
+
+	A user has:
+	a username
+	a password
+	a stored credit card
+	a date and time when order was completed
+	a timeline
+
+	A Sneaker has:
+	a title
+	a description
+	an associated price tag
+
+Subway System:
+	The ultimate goal of the app is to provide users with a layout of the number of stops it will take them to get from one station to another. The description above failed to represent that. 
+
+	In contrast some potential advantages would include detailed descriptions of the train stops for individuals who may not know the city as well. Users would get a better idea of where the nearest train station is relative to their respective locations. 
+
+Doctor Appointment App:
+	Approach 1:
+	Advantages: the representation of the doctors is accessible and easy to follow.
+	Disadvantage: Difficult to disern which doctor is set for twhat appointment.
+
+	Approach 2:
+	Advantage: Finding information for a given patient.
+	Disadvantage: Difficult to locate appointments
+
+
+Tic Tac Toe:
+	A Player has:
+	a username
+	a url to avatar
+	
+	A Game has:
+	an X player
+	an O player
+	
+	A Move has:
+	a player token (X or O)
+	
+
+  var examplePlayer = {
+    username: 'matkins15',
+    avatarURL: 'images/clown.png'
+  };
+  var exampleMove = {
+    playerToken: 'X',
+    position: 6
+  };
+  var exampleGame = {
+    xPlayer: {
+      username: 'rickest_rick_there_is',
+      avatarURL: 'http://imgur.com/...'
+    },
+    oPlayer: {
+      username: 'Leeney,
+      avatarURL: 'htt[://unplash.com'
+    },
+    moves: [
+      {
+        playerToken: 'X',
+        position: 6
+      },
+      {
+        playerToken: 'O',
+        position: 4
+      },
+      {
+        playerToken: 'X',
+        position: 8
+      }
+    ]
+  };
+
+The game would represent the number of moves and or options for the x and o player.
+
+Calculating 3 in a row is much easier in the first example. The ability to build the second game would be better than the first. With that my choice is the second game.
+
+Given the fact that the second game is made up of set moves it would make most sense if the game was represented by a set of arrays.
+
+
