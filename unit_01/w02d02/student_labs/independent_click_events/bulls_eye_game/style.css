@@ -2,10 +2,11 @@ body {
   line-height: 2rem;
   text-align: center;
   font-family: serif;
+
 }
 
 .ring {
-  border-radius: 10pt;
+  border-radius: 100pt;
   margin: 0 auto;
   line-height: 2rem;
 }

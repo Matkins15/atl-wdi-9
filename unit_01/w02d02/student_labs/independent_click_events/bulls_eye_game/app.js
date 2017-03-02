@@ -25,7 +25,9 @@ window.onload = function() {
   var ring3 = document.querySelector('.ring-3');
 
   body.addEventListener('click', bullseyeGame.miss);
-  ring1.addEventListener('click', bullseyeGame.outerRing)
+  ring1.addEventListener('click', bullseyeGame.outerRing);
+  ring2.addEventListener('click', bullseyeGame.middleRing);
+  ring3.addEventListener('click', bullseyeGame.bullsEye);
 }
 
 
@@ -42,7 +44,6 @@ var bullseyeGame = {
   miss: function(event) {
     event.stopPropagation();
     alert('YOU MISSED');
-
     bullseyeGame.updateScore(0);
     // [ALERT:] needs to be bullseyeGame because this in clickEvents refers to the html
     // element that was clicked
@@ -50,6 +51,22 @@ var bullseyeGame = {
 
   outerRing: function(event) {
     event.stopPropagation();
-    alert('outerRing was clicked')
-  }
+    alert("You're on target");
+    
+    bullseyeGame.updateScore(10);
+  },
+      
+  middleRing: function(event) {
+    event.stopPropagation();
+    alert('Nice thow! So close to the bullseye');
+    
+    bullseyeGame.updateScore(50);
+  },
+    
+  bullsEye: function(event) {
+    event.stopPropagation();
+    alert('Bang Bang');
+    
+    bullseyeGame.updateScore(100);
+  },
 }
