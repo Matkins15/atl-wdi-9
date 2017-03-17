@@ -6,8 +6,15 @@ var hbs         = require('hbs');
 /* app settings*/
 var app         = express();
 var port        = process.env.PORT || 3000;
+var bodyParser = require('body-parser');
 /* set up the application params*/
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+var todosController = require('./controllers/todos_controllers.js');
+app.use('/todos', todosController);
 // log
 app.use( logger('dev'));
 
@@ -17,23 +24,6 @@ app.set('view engine', 'hbs');
 /* HOME */
 app.get('/', function(req,res) {
   res.send('This is our Home Page');
-});
-
-/* INDEX TODOS */
-app.get('/todos', function(req,res) {
-  var seededTodos = [
-    {
-      description: "get beer",
-      urgent: true
-    }, {
-      description: "dry cleaning",
-      urgent: false
-    }
-  ];
-
-  res.render('todos/index', {
-    todos: seededTodos
-  });
 });
 
 // Start server
