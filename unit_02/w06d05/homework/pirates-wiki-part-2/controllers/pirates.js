@@ -5,6 +5,7 @@
 var express = require("express");
 var router = express.Router();
 var pirates = require('../models/pirates.js');
+var methodOverride = require("method-override");
 
 //==============================
 // READ
@@ -45,6 +46,12 @@ router.get('/:id', function(req, res){
 //==============================
 // DESTROY
 //==============================
+router.delete('/:id', function(req, res){
+	pirates.splice(req.params.id, 1); // remove the item from the array
+
+	res.redirect('/pirates'); //redirect back to index route
+});
+
 
 //==============================
 // EXPORTS

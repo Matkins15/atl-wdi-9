@@ -6,6 +6,12 @@ var app = express();
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 var hbs = require('hbs');
+// include the method-override package
+var methodOverride = require('method-override');
+//...
+// after the app has been defined
+// use methodOverride.  We will be adding a query parameter to our delete form named _method
+app.use(methodOverride('_method'));
 
 
 //===========================
@@ -19,6 +25,8 @@ app.use(bodyParser.json());
 //set handlebars as view engine
 app.set("view engine", "hbs");
 app.set('views', './views');
+
+
 
 //===========================
 // CONTROLLERS
