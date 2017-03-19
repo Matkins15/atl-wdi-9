@@ -1,0 +1,33 @@
+.background {
+  background-image: url('http://elder-geek.com/wp-content/uploads/2012/01/Misc-Piracy-Banner.jpg');
+  height: 70px;
+}
+
+.header {
+  font-family: 'Jim Nightshade', cursive;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+}
+
+.pirateName {
+  font-family: 'Gochi Hand', cursive;
+  color: black;
+  text-align: center;
+}
+
+.piratePage {
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+ .pirateDetails {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  margin-top: 20px;
+}

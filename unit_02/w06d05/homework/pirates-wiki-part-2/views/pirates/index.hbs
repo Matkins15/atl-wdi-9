@@ -1,10 +1,14 @@
-<h1>The Flyest Pirates of Da 7 Cs</h1>
+<div class="background">
+  <h1 class="header">The Flyest Pirates of Da 7 Cs</h1>
+</div>
 
-<ul>
+
+<ul class="pirateName">
   {{#each pirates}}
-    <li><a href="/pirates/{{@index}}"><h2>{{name}}</h2></a></li>
-    <div><a href="/pirates/{{@index}}/edit">Edit</a></div>
-    <form action="/pirates/{{@index}}?_method=DELETE" method="POST">
+    <a class="text-muted" href="/pirates/{{@index}}"><h2>{{name}}</h2></a>
+    <div><a href="/pirates/{{@index}}/edit" class="btn btn-warning">Edit</a></div>
+
+    <form class="deleteButton"action="/pirates/{{@index}}?_method=DELETE" method="POST">
         <input type="submit" value="DELETE"/>
     </form>
   {{/each}}
