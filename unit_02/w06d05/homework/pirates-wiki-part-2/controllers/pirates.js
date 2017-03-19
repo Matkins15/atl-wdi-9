@@ -42,6 +42,30 @@ router.get('/:id', function(req, res){
 //==============================
 // UPDATE
 //==============================
+router.get('/:id/edit', function(req, res){
+  res.render('pirates/edit', {
+    pirates: {
+      name: pirates[req.params.id].name,
+      birthplace: pirates[req.params.id].birthplace,
+			death_year: pirates[req.params.id].death_year,
+			base: pirates[req.params.id].base,
+			nickname: pirates[req.params.id].nickname,
+      id: req.params.id
+    }
+  });
+});
+
+router.put('/:id', function(req, res) {
+  var piratesEdit = pirates[req.params.id];
+
+  piratesEdit.name = req.body.name;
+  piratesEdit.birthplace = req.body.birthplace;
+	piratesEdit.death_year = req.body.death_year;
+	piratesEdit.base = req.body.base;
+	piratesEdit.nickname = req.body.nickname;
+
+  res.redirect('/pirates');
+})
 
 //==============================
 // DESTROY
