@@ -9,9 +9,17 @@ function Tamagotchi(name, creatureType) {
   this.creatureType = creatureType;
 
   this.cry = function(){
-    var smallerTummy = this.foodInTummy - 1;
+    this.smallerTummy = this.foodInTummy - 1;
     console.log(smallerTummy);
     console.log(`WAHH ${this.name} is hungry`);
+  };
+  this.puke = function(){
+    this.smallerTummy = this.foodInTummy - 1;
+    console.log(`${this.smallerTummy} i can't afford to lose anymore food`);
+  };
+  this.yawn = function(){
+    this.nosleep = this.restedness - 1;
+    console.log(`${this.name} has a current restedness of: ${this.nosleep}`);
   };
 };
 
