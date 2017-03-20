@@ -1,27 +1,26 @@
 console.log('tamagotchi file is loaded');
 
 //your constructor function here
-function Tamagotchi() {
+function Tamagotchi(name, creatureType) {
   this.foodInTummy = 10;
   this.restedness = 10;
   this.health = 10;
+  this.name = name;
+  this.creatureType = creatureType;
 
   this.cry = function(){
     var smallerTummy = this.foodInTummy - 1;
     console.log(smallerTummy);
-    console.log("WAHH!!!");
+    console.log(`WAHH ${this.name} is hungry`);
   };
 };
 
 
 //create new Tamagotchis
-var tamagotchiMatt = new Tamagotchi();
-var tamagotchiAylin = new Tamagotchi();
+var tamagotchi1 = new Tamagotchi("Matt", "Beast");
+var tamagotchi2 = new Tamagotchi("Lin", "Flower");
+var tamagotchi3 = new Tamagotchi("Harry", "Joker");
+var tamagotchi4 = new Tamagotchi("Ray", "Lasagna");
 
-console.log(tamagotchiMatt);
-console.log(tamagotchiAylin);
-
-tamagotchiMatt.cry();
-tamagotchiAylin.cry();
 
 //test out your Tamagotchies below via console.logs
