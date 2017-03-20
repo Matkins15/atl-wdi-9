@@ -10,17 +10,35 @@ function Tamagotchi(name, creatureType) {
 
   this.cry = function(){
     this.smallerTummy = this.foodInTummy - 1;
-    console.log(smallerTummy);
+    console.log(`${this.smallerTummy}`);
     console.log(`WAHH ${this.name} is hungry`);
+
+    function hungerTimer() {
+        this.cry = setInterval(function(){
+          console.log(`${this.name}`); }, 6000);
+    }; hungerTimer();
   };
+
   this.puke = function(){
     this.smallerTummy = this.foodInTummy - 1;
     console.log(`${this.smallerTummy} i can't afford to lose anymore food`);
+
+    function sickTimer() {
+        this.puke = setInterval(function(){
+          console.log(`${this.name}`); }, 10000);
+    }; sickTimer();
   };
+
   this.yawn = function(){
     this.nosleep = this.restedness - 1;
     console.log(`${this.name} has a current restedness of: ${this.nosleep}`);
+
+    function yawnTimer() {
+        this.puke = setInterval(function(){
+          console.log(`${this.name}`); }, 20000);
+    }; yawnTimer();
   };
+
 };
 
 
@@ -32,3 +50,8 @@ var tamagotchi4 = new Tamagotchi("Ray", "Lasagna");
 
 
 //test out your Tamagotchies below via console.logs
+// var myVar = this.cry;
+//
+// function myStartFunction() {
+//     this.cry = setInterval(function(){ console.log(`${this.name}`); }, 2000);
+// }
