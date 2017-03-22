@@ -2,13 +2,21 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var hbs = require('hbs');
+var methodOverride = require('method-override');
+var morgan = require('morgan');
 
+app.set('view engine', 'hbs');
+app.use(methodOverride('_method'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var usersController = require("./controllers/usersController.js");
 app.use('/users', usersController);
+
+var project_ideasController = require("./controllers/project_ideasController.js");
+app.use('/users/:userId/project-ideas', project_ideasController);
 
 // Mongoose stuff
 var mongoose = require('mongoose');
