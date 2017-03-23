@@ -45,8 +45,6 @@
       list: String
     });
 
-
-
     user.save(function(err, user){
       if (err) console.log(err);
       console.log(user);
