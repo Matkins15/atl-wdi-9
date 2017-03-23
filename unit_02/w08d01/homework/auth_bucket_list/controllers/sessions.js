@@ -2,7 +2,7 @@ var express = require('express');
 router = express.Router();
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
-var user = new User({ username: req.body.username, email: req.body.email, password_digest: res.hashedPassword });
+
 
 //LOGIN
 router.get('/login', function(req, res) {
