@@ -70,7 +70,7 @@ items.forEach(function(item, i){
 });
 
 users.forEach(function(user, i){
-  user.project_ideas.push(projectIdeas[i]);
+  user.projectIdeas.push(projectIdeas[i]);
 
   user.items.push(items[i]);
 
