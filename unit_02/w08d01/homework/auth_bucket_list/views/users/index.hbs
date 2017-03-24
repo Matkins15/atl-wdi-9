@@ -1,8 +1,10 @@
-  <h1>Users:</h1>
+  {{#if currentUser}}
+    <h4>welcome {{currentUser.email}}</h4>
+  {{/if}}
 
-
-  <ul>
-    <li>User 1 Name</li>
-    <li>User 2 Name</li>
-    <li>User 3 Name</li>
-  </ul>
+  {{#each users}}
+    <ul>
+      <li>{{username}}</li>
+      <li>{{email}}</li>
+    </ul>
+  {{/each}}
