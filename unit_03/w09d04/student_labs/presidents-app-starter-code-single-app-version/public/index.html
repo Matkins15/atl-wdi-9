@@ -16,6 +16,9 @@
       <ul id="presidents">
         <li ng-repeat="president in presidents.all">
           <strong>{{president.name}}</strong> <em>({{president.start}} - {{president.end}})</em>
+          <div class="delete-president" ng-click='presidents.removePresident(president)'>
+            <input type="submit" name="" value="delete">
+          </div>
         </li>
       </ul>
 
@@ -39,6 +42,7 @@
           <input type="submit" value="Add President">
         </div>
       </form>
+
 
     </section>
 
