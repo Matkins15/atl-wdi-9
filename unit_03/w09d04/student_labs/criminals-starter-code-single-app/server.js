@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var mongoose = require('mongoose');
-
 mongoose.connect('mongodb://localhost:27017/infamous-masterminds');
 
 app.use(logger('dev'));
