@@ -1,7 +1,7 @@
 angular
   .module('InfamousCriminals')
-  .controller('CriminalsController', CriminalsController)
-  .service('CriminalsService', CriminalsService);
+  .controller('CriminalsController', CriminalsController);
+  // .service('CriminalsService', CriminalsService
 
 
 CriminalsController.$inject = ['$http', '$CriminalsService'];
@@ -48,6 +48,4 @@ function CriminalsController($http, $CriminalsService){
 
 }
 
-function CriminalsService () {
-
-}
+this.fordata
