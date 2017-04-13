@@ -1,6 +1,6 @@
+
 require('webpack');
 var glob = require('glob');
-
 module.exports = {
     context: __dirname,
     entry: {

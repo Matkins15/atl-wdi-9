@@ -70,12 +70,15 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-angular.module('moviesApp').controller('ReviewsController', ReviewsController);
-
-function ReviewsController() {
-    this.reviewList = [{ content: 'It was good.' }, { content: 'Meh.' }, { content: 'Did not like it.' }];
+function CriminalsListController(CriminalsService) {
+  var vm = this;
+  vm.greeting = "ayyye yo";
+  vm.message = CriminalsService.message;
 }
-module.exports = ReviewsController;
+
+CriminalsListController.$inject = ['CriminalsService'];
+
+module.exports = CriminalsListController;
 
 /***/ }),
 /* 1 */
@@ -83,33 +86,39 @@ module.exports = ReviewsController;
 
 const angular = __webpack_require__(5);
 
-angular.module('moviesApp', []);
+angular.module('criminalsApp', []);
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-angular.module('moviesApp').controller('MoviesController', MoviesController);
+var criminalsListTemplate = __webpack_require__(6);
+var criminalsListController = __webpack_require__(0);
 
-function MoviesController() {
-    var vm = this;
+var CriminalsListComponent = {
+  template: criminalsListTemplate,
+  controller: criminalsListController
+};
 
-    vm.movieList = [{ title: 'Toy Story 3', year: 2010 }, { title: 'In Bruges', year: 2008 }, { title: 'Breakin 2: Electric Boogaloo', year: 1984 }, { title: 'Drumline', year: 2002 }, { title: 'The Bicycle Thief', year: 1948 }];
-}
+angular.module('criminalsApp').component('criminalsList', CriminalsListComponent);
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-let reviewsTemplate = __webpack_require__(6);
-let reviewsController = __webpack_require__(0);
+angular.module('criminalsApp').service('CriminalsService', CriminalsService);
 
-let ReviewsComponent = {
-    template: reviewsTemplate,
-    controller: reviewsController
-};
+function CriminalsService() {
+  var self = this;
 
-angular.module('moviesApp').component('reviews', ReviewsComponent);
+  self.getCriminals = function () {
+    console.log('getCriminals is working');
+
+    return $http.get('/criminals');
+  };
+}
+
+CriminalsService.$inject = ['$http'];
 
 /***/ }),
 /* 4 */
@@ -33500,7 +33509,7 @@ module.exports = angular;
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <h3>Reviews:</h3>\n    <ul>\n        <li ng-repeat=\"review in $ctrl.reviewList\">{{review.content}}</li>\n    </ul>\n</div>\n";
+module.exports = "<div>\n\n  Total criminals: {{1+1}}\n\n  <br>\n  {{$ctrl.message}}\n  <div ng-repeat=\"criminal in $ctrl.criminalsList\">\n    <span>Name: {{criminal.criminalName}}</span>\n    <span>City: {{criminal.city}}</span>\n  </div>\n</div>\n";
 
 /***/ }),
 /* 7 */
@@ -33508,8 +33517,8 @@ module.exports = "<div>\n    <h3>Reviews:</h3>\n    <ul>\n        <li ng-repeat=
 
 __webpack_require__(1);
 __webpack_require__(2);
-__webpack_require__(3);
-module.exports = __webpack_require__(0);
+__webpack_require__(0);
+module.exports = __webpack_require__(3);
 
 
 /***/ })

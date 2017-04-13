@@ -9,3 +9,4 @@ function ReviewsController() {
         {content: 'Did not like it.'},
     ]
 }
+module.exports = ReviewsController;
