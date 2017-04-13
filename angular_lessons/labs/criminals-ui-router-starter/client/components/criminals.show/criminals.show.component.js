@@ -8,4 +8,8 @@ const component = {
 
 angular
 	.module('criminals')
+<<<<<<< HEAD
+=======
+	// call this with <criminals-show></criminals-show>
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 	.component('criminalsShow', component);
