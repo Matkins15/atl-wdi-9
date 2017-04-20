@@ -7,6 +7,7 @@
     <strong>{{criminal.name}}</strong>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!-- <span ng-if="criminal.status" class='status {{criminal.status | lowercase }}'>{{criminal.status | uppercase}}</span> -->
 
     <a ui-sref="criminalsShow({ criminalId: criminal._id })">Click to see their crime (in criminals#show)</a>
@@ -14,5 +15,13 @@
 =======
     <a ui-sref="criminalsShow({ criminalId: criminal._id })">Click to see their crime (in criminals#show)</a>
 >>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
+=======
+		<!-- Reference for Gerry -->
+    <!-- <em>{{criminal.crime}}</em> -->
+
+    <span ng-if="criminal.status" class='status {{criminal.status | lowercase }}'>{{criminal.status | uppercase}}</span>
+
+    <a ui-sref="criminalsShow({criminalId: criminal._id})">{Click to see their crime (in users#show)</a>
+>>>>>>> 203a9eef1f30cd471464002baf3e3139f87d4dee
   </li>
 </ul>
